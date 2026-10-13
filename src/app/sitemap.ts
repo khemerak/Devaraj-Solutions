@@ -1,0 +1,1 @@
+import type {MetadataRoute} from 'next';import {config} from '@/lib/config';import {products} from '@/data/products';export default function sitemap():MetadataRoute.Sitemap{return config.siteUrl?['','/products','/about','/contact','/privacy','/terms',...products.map(p=>'/products/'+p.slug)].map(path=>({url:config.siteUrl+path})):[];}

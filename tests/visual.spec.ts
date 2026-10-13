@@ -1,0 +1,2 @@
+import {test,expect} from '@playwright/test';
+test('visual review captures',async({page})=>{await page.setViewportSize({width:1440,height:1000});await page.goto('/');await expect(page.locator('h1')).toBeVisible();await page.screenshot({path:'docs/home-desktop.png',fullPage:true});await page.setViewportSize({width:375,height:812});await page.goto('/');await page.screenshot({path:'docs/home-mobile.png',fullPage:true});});

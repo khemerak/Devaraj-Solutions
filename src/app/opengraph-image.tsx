@@ -1,0 +1,4 @@
+import { ImageResponse } from 'next/og';
+export const alt='Devaraj Solutions — Building Smarter Digital Solutions';
+export const size={width:1200,height:630};export const contentType='image/png';
+export default function Image(){return new ImageResponse(<div style={{height:'100%',width:'100%',display:'flex',flexDirection:'column',justifyContent:'center',padding:90,background:'#f6f8fb',color:'#142342',fontFamily:'sans-serif'}}><div style={{display:'flex',fontSize:25,marginBottom:60}}>DEVARAJ SOLUTIONS</div><div style={{display:'flex',fontSize:70,fontWeight:700}}>Thoughtful technology.</div><div style={{display:'flex',fontSize:70,fontWeight:700,color:'#2563eb'}}>Practical solutions.</div><div style={{display:'flex',fontSize:24,marginTop:45,color:'#66758b'}}>Building Smarter Digital Solutions.</div></div>,size);}

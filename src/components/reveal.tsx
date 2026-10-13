@@ -1,0 +1,1 @@
+'use client'; import { motion, useReducedMotion } from 'motion/react'; export default function Reveal({children}:{children:React.ReactNode}){const reduced=useReducedMotion();return <motion.div initial={{y:reduced?0:10}} animate={{y:0}} transition={{duration:reduced?0:0.5}}>{children}</motion.div>}
