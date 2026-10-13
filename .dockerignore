@@ -4,3 +4,13 @@ node_modules
 .git
 playwright-report
 test-results
+
+.env*
+*.env
+*.env.*
+.npmrc
+*.pem
+*.key
+.vercel
+.aws
+.ssh

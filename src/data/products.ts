@@ -1,8 +1,9 @@
 import { config } from '@/lib/config';
-export type ProductStatus = 'available' | 'in-development' | 'coming-soon';
+export type ProductStatus = 'available' | 'in-development' | 'coming-soon' | 'source-available';
 export interface Product {
   id: string; slug: string; name: string; category: string; summary: string;
   description: string; features: string[]; status: ProductStatus;
+  sourceUrl?: string; license?: string; services?: { title: string; text: string; action: string; href: string }[];
   externalUrl?: string; featured: boolean; headline: string;
   details: { title: string; text: string }[];
   steps: { title: string; text: string }[];
@@ -14,11 +15,17 @@ export interface Product {
 export const products: Product[] = [{
   id: 'time', slug: 'devaraj-time', name: 'Devaraj Time',
   category: 'Attendance & Workforce Management',
-  summary: 'Less attendance admin. More time for what matters.',
-  description: 'QR attendance, employee schedules, and traceable corrections in one workspace. Give HR teams and employees a clearer view of each workday.',
+  summary: 'Open-source attendance. Your choice of hosting.',
+  description: 'Open-source QR attendance, employee schedules, and traceable corrections. Host it yourself, or ask Devaraj Solutions to set it up and operate it for your team.',
   features: ['QR-Based Attendance', 'Location Verification', 'Employee Scheduling', 'Attendance Records', 'Leave Requests', 'CSV / XLSX Exports'],
-  status: config.timeUrl && process.env.DEVARAJ_TIME_AVAILABLE === 'true' ? 'available' : 'in-development',
+  status: config.timeUrl && process.env.DEVARAJ_TIME_AVAILABLE === 'true' ? 'available' : 'source-available',
   externalUrl: config.timeUrl, featured: true,
+  sourceUrl: 'https://github.com/khemerak/Devaraj-Time', license: 'MIT',
+  services: [
+    { title: 'Host it yourself', text: 'Use the MIT-licensed source at no software license cost. You manage your server, credentials, updates, backups, and employee data.', action: 'Read the deployment guide', href: 'https://github.com/khemerak/Devaraj-Time/blob/main/docs/deployment.md' },
+    { title: 'Let us set it up', text: 'We help deploy and configure Devaraj Time on your infrastructure, with scope, handover, and support agreed before work starts.', action: 'Request a setup quote', href: '/contact?product=time&service=setup' },
+    { title: 'Let us host it', text: 'Ask us to operate the application for your team. Hosting, maintenance, backups, and support responsibilities are agreed in a separate service arrangement.', action: 'Request a hosting quote', href: '/contact?product=time&service=hosting' },
+  ],
   headline: 'Smarter attendance. Fairer workplaces.',
   audience: [
     { title: 'Organizations with workplace-based teams', text: 'Manage attendance across configured workplaces, branches, and departments, with schedules that reflect how your team works.' },
@@ -32,7 +39,7 @@ export const products: Product[] = [{
     { title: 'Corrections with context', text: 'Requests and approval decisions create a traceable path from the original attendance event to an adjusted summary.' },
     { title: 'Workplace rules in one place', text: 'Configure schedules and location checks, then review attendance summaries and export them for further analysis.' },
   ],
-  releaseNote: 'The application implements the core workflows described here. A public production deployment has not been verified; the hero preview is illustrative, and the application screenshots below use development example data.',
+  releaseNote: 'The MIT-licensed source is available on GitHub. Setup and hosting are offered by arrangement; there is no instant hosted signup. Review the current limitations before production use. The hero preview is illustrative, and screenshots use development example data.',
   details: [
     { title: 'QR attendance', text: 'Use permanent workplace QR points for check-in and check-out. The application also supports break events and employee attendance history.' },
     { title: 'Location-aware verification', text: 'Configure workplace coordinates, a geofence radius, and location accuracy requirements. Browser GPS and QR images can be fabricated; these checks are not fraud-proof.' },
@@ -53,4 +60,4 @@ export const products: Product[] = [{
     'Deployment, mobile camera/location behavior, security, and applicable privacy requirements need production review before adoption.',
   ],
 }];
-export const statusLabel = { available: 'Available', 'in-development': 'In development', 'coming-soon': 'Coming soon' };
+export const statusLabel = { available: 'Available', 'in-development': 'In development', 'coming-soon': 'Coming soon', 'source-available': 'Open source' };

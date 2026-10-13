@@ -256,3 +256,14 @@ html[data-theme='dark'] .home-contact { background: #172740; }
 .landing-screen-grid figcaption { color: var(--muted); font-size: 12px; margin-top: 14px; }
 .landing-screen-grid figure:last-child { max-width: 340px; justify-self: center; }
 @media(max-width:760px) { .landing-screen-grid { grid-template-columns: 1fr; gap: 35px; } }
+.service-intro { max-width: 760px; margin: 25px 0 40px; font-size: 17px; }
+.service-options { display: grid; grid-template-columns: repeat(3,1fr); gap: 45px; }
+.service-options article { display: flex; flex-direction: column; align-items: start; border-top: 1px solid var(--border); padding-top: 28px; }
+.service-options h3 { font-size: 30px; margin-bottom: 20px; }
+.service-options p { margin-bottom: 30px; max-width: 550px; }
+.service-options .text-link { margin-top: auto; }
+.service-pricing { margin-top: 45px; padding-top: 25px; border-top: 1px solid var(--border); font-size: 13px; max-width: 900px; }
+@media(max-width:760px) { .service-options { grid-template-columns: 1fr; gap: 35px; } }
+
+.contact-channels { display: flex; flex-direction: column; align-items: start; gap: 16px; margin-block: 28px; }
+.contact-channels a { overflow-wrap: anywhere; white-space: normal; }

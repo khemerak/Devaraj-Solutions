@@ -1,7 +1,6 @@
 node_modules
 .next
 .env*
-!.env.example
 *.tsbuildinfo
 test-results
 playwright-report
@@ -9,3 +8,17 @@ playwright-report
 .vercel
 *.pem
 *.key
+
+# All local environment files and credential artifacts (including templates).
+.env*
+*.env
+*.env.*
+.envrc
+.npmrc
+.vercel/
+.aws/
+.ssh/
+*.p12
+*.pfx
+id_rsa
+id_ed25519

@@ -12,7 +12,7 @@ NEXT_PUBLIC_SITE_URL=https://devarajsolutions.site
 
 Leave it unset for preview environments to keep previews non-indexable. Keep NEXT_PUBLIC_DEVARAJ_TIME_URL unset until the independent application is actually deployed, and keep DEVARAJ_TIME_AVAILABLE=false. Product cards already lead to the public /products/devaraj-time showcase.
 
-Contact delivery can be configured later using the server-only values in .env.example. Without them, the page honestly displays an unavailable state.
+Contact delivery can be configured later using the server-only settings documented in README.md. Without them, the page honestly displays an unavailable state.
 
 After the first successful deployment, add devarajsolutions.site and www.devarajsolutions.site in the project's Domains settings. Select devarajsolutions.site as primary and redirect www to it. Copy the exact project-specific A/CNAME/TXT values Vercel returns into Namecheap Advanced DNS when using Namecheap DNS. Replace only conflicting parking/redirect records for @/www; preserve unrelated email and verification records. No guessed DNS targets are stored in this repository.
 
