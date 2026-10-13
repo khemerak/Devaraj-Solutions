@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",
+    "@vercel/analytics": "^2.0.1",
     "lucide-react": "^1.56.0",
     "motion": "^14.2.0",
     "next": "^16.4.0",
