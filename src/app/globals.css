@@ -267,3 +267,9 @@ html[data-theme='dark'] .home-contact { background: #172740; }
 
 .contact-channels { display: flex; flex-direction: column; align-items: start; gap: 16px; margin-block: 28px; }
 .contact-channels a { overflow-wrap: anywhere; white-space: normal; }
+
+/* Dedicated Devaraj Time landing navigation. */
+.time-header{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-block:18px}
+.time-header nav{display:flex;align-items:center;gap:28px;font-size:14px}
+.time-landing .product-hero{padding-top:80px}
+@media(max-width:760px){.time-header{flex-wrap:wrap;gap:16px}.time-header nav{order:3;width:100%;justify-content:space-between;gap:12px;font-size:12px}.time-landing .product-hero{padding-top:48px}}

@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test';
 test('product showcase explains audience, benefits, scope, and inquiry routing',async({page})=>{
- await page.goto('/products');await page.getByRole('link',{name:'Explore Devaraj Time',exact:true}).click();
+ await page.goto('/products/devaraj-time');
  await expect(page.getByRole('heading',{level:1})).toContainText('Smarter attendance');
  await expect(page.getByRole('heading',{name:'HR teams and administrators'})).toBeVisible();
  await expect(page.getByRole('heading',{name:'Employees',exact:true})).toBeVisible();

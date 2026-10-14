@@ -10,7 +10,7 @@ Set this variable for **Production** before deploying:
 NEXT_PUBLIC_SITE_URL=https://devarajsolutions.site
 ```
 
-Leave it unset for preview environments to keep previews non-indexable. Keep NEXT_PUBLIC_DEVARAJ_TIME_URL unset until the independent application is actually deployed, and keep DEVARAJ_TIME_AVAILABLE=false. Product cards already lead to the public /products/devaraj-time showcase.
+Leave it unset for preview environments to keep previews non-indexable. The product website defaults to https://time.devarajsolutions.site. Devaraj Time is marked as source-available; this subdomain hosts only its landing page, with the application distributed through GitHub.
 
 Contact delivery can be configured later using the server-only settings documented in README.md. Without them, the page honestly displays an unavailable state.
 
@@ -19,3 +19,11 @@ After the first successful deployment, add devarajsolutions.site and www.devaraj
 Verify DNS configuration and HTTPS, then check homepage, products, showcase, About, Contact, sitemap.xml, robots.txt, and canonical/social URLs. Legal policies remain draft documents requiring review before public launch.
 
 Vercel's Hobby plan is for personal, non-commercial projects. Choose an appropriate commercial plan for this company website; account creation, billing selection, and service connection are owner actions.
+
+## Devaraj Time subdomain
+
+Add `time.devarajsolutions.site` to the **same Vercel project** as the company website. In your DNS provider, add the `time` record using the exact values shown by Vercel, then wait for domain verification and TLS. No separate application deployment is needed for this marketing page.
+
+The host-based rewrite serves `/time` at the subdomain root. `/time` is also available on local and preview deployments for review. Company product links point to the subdomain; inquiries and company navigation use the company origin. The existing `/products/devaraj-time` route remains available for old links. This subdomain is the marketing website, not the attendance application login.
+
+After deploying, verify the company “View product” link, subdomain root, product-only navigation, screenshots, and setup/hosting inquiry links. Set NEXT_PUBLIC_DEVARAJ_TIME_URL only when intentionally using a different marketing origin, and update the host rewrite accordingly.

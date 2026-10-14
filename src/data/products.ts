@@ -18,7 +18,7 @@ export const products: Product[] = [{
   summary: 'Open-source attendance. Your choice of hosting.',
   description: 'Open-source QR attendance, employee schedules, and traceable corrections. Host it yourself, or ask Devaraj Solutions to set it up and operate it for your team.',
   features: ['QR-Based Attendance', 'Location Verification', 'Employee Scheduling', 'Attendance Records', 'Leave Requests', 'CSV / XLSX Exports'],
-  status: config.timeUrl && process.env.DEVARAJ_TIME_AVAILABLE === 'true' ? 'available' : 'source-available',
+  status: 'source-available',
   externalUrl: config.timeUrl, featured: true,
   sourceUrl: 'https://github.com/khemerak/Devaraj-Time', license: 'MIT',
   services: [
