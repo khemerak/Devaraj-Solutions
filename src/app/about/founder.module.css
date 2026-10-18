@@ -1,0 +1,13 @@
+.founder { display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr); gap:clamp(32px,6vw,96px); align-items:center; border-top:1px solid var(--border); padding-block:64px; margin-top:32px; }
+.portrait { margin:0; min-width:0; }
+.portrait img { display:block; width:100%; height:auto; border-radius:4px; background:#f4f3f1; }
+.portrait figcaption { margin-top:16px; color:var(--muted); font-size:10px; letter-spacing:1.8px; }
+.bio { min-width:0; }
+.bio h2 { font-size:clamp(38px,4vw,64px); }
+.bio .role { color:var(--blue); font-size:14px; margin-top:12px; margin-bottom:28px; }
+.bio > p { font-size:16px; line-height:1.85; margin-top:18px; }
+.bio blockquote { margin:28px 0; padding-left:22px; border-left:2px solid var(--blue); font-size:clamp(18px,1.6vw,23px); line-height:1.6; letter-spacing:-.02em; }
+.links { display:flex; flex-wrap:wrap; gap:16px 28px; padding-top:10px; }
+.links a { display:inline-flex; align-items:center; gap:8px; padding-block:8px; font-size:14px; font-weight:600; }
+.links a:hover { color:var(--blue); }
+@media(max-width:760px) { .founder { grid-template-columns:1fr; padding-block:40px; margin-top:20px; gap:32px; } .portrait { max-width:440px; } .bio > p { font-size:15px; } }
