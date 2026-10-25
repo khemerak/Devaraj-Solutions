@@ -6,6 +6,7 @@ import { products, statusLabel } from '@/data/products';
 import { metadata as m } from '@/lib/metadata';
 import { Button } from '@/components/ui';
 import Preview from '@/components/preview';
+import OrdersLanding from '@/components/orders-landing';
 
 export function generateStaticParams() { return products.map(product => ({ slug: product.slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -17,6 +18,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const product = products.find(product => product.slug === slug);
   if (!product) notFound();
+  if (product.id === 'orders') return <OrdersLanding product={product} />;
   return <div className="product-landing">
     <section className="container section product-hero">
       <div><Link className="back-link" href="/products">← All products</Link><span className="eyebrow">{product.name.toUpperCase()} · {statusLabel[product.status]}</span><h1>{product.headline}</h1><p>{product.description}</p>
