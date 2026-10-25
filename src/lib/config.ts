@@ -1,2 +1,30 @@
-export function httpUrl(value?: string) { if (!value) return undefined; try { const url = new URL(value); return ['http:', 'https:'].includes(url.protocol) ? url.toString().replace(/\/$/, '') : undefined; } catch { return undefined; } }
-export const config = { siteUrl: httpUrl(process.env.NEXT_PUBLIC_SITE_URL), timeUrl: httpUrl(process.env.NEXT_PUBLIC_DEVARAJ_TIME_URL) || 'https://time.devarajsolutions.site', email: process.env.CONTACT_EMAIL || 'pavkhemerak.official@gmail.com', phone: '+85514945699', telegramUrl: 'https://t.me/pavkhemerak', contactReady: Boolean(process.env.RESEND_API_KEY && process.env.CONTACT_FROM && process.env.CONTACT_TO && process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) };
+export function httpUrl(value?: string) {
+  if (!value) return undefined;
+  try {
+    const url = new URL(value);
+    return ["http:", "https:"].includes(url.protocol)
+      ? url.toString().replace(/\/$/, "")
+      : undefined;
+  } catch {
+    return undefined;
+  }
+}
+export const config = {
+  siteUrl: httpUrl(process.env.NEXT_PUBLIC_SITE_URL),
+  timeUrl:
+    httpUrl(process.env.NEXT_PUBLIC_DEVARAJ_TIME_URL) ||
+    "https://time.devarajsolutions.site",
+  ordersUrl:
+    httpUrl(process.env.NEXT_PUBLIC_DEVARAJ_ORDERS_URL) ||
+    "https://orders.devarajsolutions.site",
+  email: process.env.CONTACT_EMAIL || "pavkhemerak.official@gmail.com",
+  phone: "+85514945699",
+  telegramUrl: "https://t.me/pavkhemerak",
+  contactReady: Boolean(
+    process.env.RESEND_API_KEY &&
+    process.env.CONTACT_FROM &&
+    process.env.CONTACT_TO &&
+    process.env.UPSTASH_REDIS_REST_URL &&
+    process.env.UPSTASH_REDIS_REST_TOKEN,
+  ),
+};
