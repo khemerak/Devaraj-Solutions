@@ -74,7 +74,7 @@ export const products: Product[] = [{
     { title: 'Payments with clarity', text: 'Record cash, bank transfers, KHQR and cash on delivery manually. Payment status stays separate from delivery; KHQR is not automatically verified.' },
     { title: 'A workspace for Cambodia', text: 'English and Khmer, USD cents or whole riel, and organization-local reporting with Phnom Penh as the default timezone.' },
     { title: 'Updates where you work', text: 'Connect your private Telegram chat for order notifications. Review your sales summaries and export CSV records when you need them.' },
-    { title: 'Room for your team', text: 'Start with one owner during your trial. An active Starter or Growth subscription lets you invite staff within your plan limits.' },
+    { title: 'Room for your team', text: 'Start with one owner during your trial. An active Starter, Growth, or Scale subscription lets you invite staff within your plan limits.' },
   ],
   steps: [
     { title: 'Set up your business', text: 'Create an independent Devaraj Den account and verify your email.' },

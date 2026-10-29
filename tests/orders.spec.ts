@@ -18,8 +18,14 @@ test('Devaraj Den is registered independently without replacing Time', async ({ 
   await expect(page).toHaveURL(/products\/devaraj-den/);
   await expect(page.getByRole('heading', { name: 'More orders. Less chaos.' })).toBeVisible();
   await expect(page.getByText('DEVARAJ DEN · AVAILABLE', { exact: true })).toBeVisible();
+  await expect(page.getByText('14 days · one owner · 50 orders per UTC calendar month', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Starter — $13 / 30 days', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Growth — $20 / 30 days', exact: true })).toBeVisible();
+  await expect(page.getByText('Up to three users · 500 orders per UTC calendar month', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Growth — $38 / 30 days', exact: true })).toBeVisible();
+  await expect(page.getByText('Up to ten users · 2,000 orders per UTC calendar month', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Scale — $88 / 30 days', exact: true })).toBeVisible();
+  await expect(page.getByText('Up to twenty users · 10,000 orders per UTC calendar month', { exact: true })).toBeVisible();
+  await expect(page.getByText('permanent limited free plan', { exact: false })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Get started', exact: false }).first()).toHaveAttribute('href', 'https://den.devarajsolutions.site');
   await expect(page.getByRole('link', { name: 'View current plans in Devaraj Den' })).toHaveAttribute('href', 'https://den.devarajsolutions.site/app/subscription');
   await expect(page.getByText('Payments are reviewed manually', { exact: false })).toHaveCount(0);
