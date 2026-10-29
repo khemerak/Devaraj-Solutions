@@ -14,9 +14,9 @@ export const config = {
   timeUrl:
     httpUrl(process.env.NEXT_PUBLIC_DEVARAJ_TIME_URL) ||
     "https://time.devarajsolutions.site",
-  ordersUrl:
-    httpUrl(process.env.NEXT_PUBLIC_DEVARAJ_ORDERS_URL) ||
-    "https://orders.devarajsolutions.site",
+  denUrl:
+    httpUrl(process.env.NEXT_PUBLIC_DEVARAJ_DEN_URL) ||
+    "https://den.devarajsolutions.site",
   email: process.env.CONTACT_EMAIL || "pavkhemerak.official@gmail.com",
   phone: "+85514945699",
   telegramUrl: "https://t.me/pavkhemerak",

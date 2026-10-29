@@ -5,7 +5,7 @@ import { Intro, CTA } from '@/components/ui';
 import { metadata as m } from '@/lib/metadata';
 export const metadata = m('About Us', 'Meet Pav Khemerak, founder of Devaraj Solutions in Phnom Penh, Cambodia, building practical software with AI-assisted development.', '/about');
 const sections = [
- { title: 'What we build', text: 'Focused software for everyday work. Devaraj Time brings clarity to attendance and workforce management. Our second product, Devaraj Orders, helps small businesses manage orders, customers, and payment records.' },
+ { title: 'What we build', text: 'Focused software for everyday work. Devaraj Time brings clarity to attendance and workforce management. Our second product, Devaraj Den, helps small businesses manage orders, customers, and payment records.' },
  { title: 'Our development principles', text: 'Understand the problem before choosing a solution. Design accessible experiences. Build maintainable foundations. Improve through feedback. These principles shape our work from the first idea to each iteration.' },
  { title: 'A growing product ecosystem', text: 'Each Devaraj Solutions product has its own purpose and independent release cycle. The parent brand connects them through a shared commitment to practical technology.' },
 ];

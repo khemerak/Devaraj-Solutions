@@ -60,15 +60,15 @@ export const products: Product[] = [{
     'Deployment, mobile camera/location behavior, security, and applicable privacy requirements need production review before adoption.',
   ],
 }, {
-  id: 'orders', slug: 'devaraj-orders', name: 'Devaraj Orders',
+  id: 'orders', slug: 'devaraj-den', name: 'Devaraj Den',
   category: 'Order Management',
   summary: 'More orders. Less chaos.',
   description: 'From the first message to the final delivery: keep orders, customers, products, and payment records together. Built for Cambodian small businesses, in English and Khmer.',
   features: ['Multi-item orders', 'Customer history', 'Manual USD / KHR payments', 'Fulfillment tracking', 'English / Khmer', 'Telegram alerts'],
   status: 'available', featured: true,
-  externalUrl: config.ordersUrl,
+  externalUrl: config.denUrl,
   headline: 'Create an order in seconds. Track everything in one place.',
-  releaseNote: 'Now available as a hosted application. Create your own business workspace and start with a 14-day trial. Orders has separate accounts and data from Devaraj Time. Preview images use fictional example data.',
+  releaseNote: 'Now available as a hosted application. Create your own business workspace and start with a 14-day trial. Devaraj Den has separate accounts and data from Devaraj Time. Preview images use fictional example data.',
   details: [
     { title: 'Orders without the busywork', text: 'Record customers, multiple items, delivery fees and discounts. Keep historical prices and a traceable fulfillment history.' },
     { title: 'Payments with clarity', text: 'Record cash, bank transfers, KHQR and cash on delivery manually. Payment status stays separate from delivery; KHQR is not automatically verified.' },
@@ -77,10 +77,10 @@ export const products: Product[] = [{
     { title: 'Room for your team', text: 'Start with one owner during your trial. An active Starter or Growth subscription lets you invite staff within your plan limits.' },
   ],
   steps: [
-    { title: 'Set up your business', text: 'Create an independent Orders account and verify your email.' },
+    { title: 'Set up your business', text: 'Create an independent Devaraj Den account and verify your email.' },
     { title: 'Record the order', text: 'Choose a customer, add products or custom items, and save.' },
     { title: 'Keep things moving', text: 'Record payments, update fulfillment, and see what needs attention.' },
   ],
-  limitations: ['Customer order payments are recorded manually; there is no automatic chat import or bank verification.', 'Telegram notifications go to a private chat you explicitly connect.', 'Subscriptions are one-time USD payments for 30 days through Cutluy, not automatic recurring charges. Your plan activates after server-side payment verification.', 'Team invitations require an active paid subscription. Orders and Time remain independent products.'],
+  limitations: ['Customer order payments are recorded manually; there is no automatic chat import or bank verification.', 'Telegram notifications go to a private chat you explicitly connect.', 'Subscriptions are one-time USD payments for 30 days through Cutluy, not automatic recurring charges. Your plan activates after server-side payment verification.', 'Team invitations require an active paid subscription. Devaraj Den and Devaraj Time remain independent products.'],
 }];
 export const statusLabel = { available: 'Available', 'in-development': 'In development', 'coming-soon': 'Coming soon', 'source-available': 'Open source' };
