@@ -1,23 +1,23 @@
 import { test, expect } from '@playwright/test';
 
-test('Devaraj Den is registered independently without replacing Time', async ({ page }) => {
+test('Devaraj Orders is registered independently without replacing Time', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: 'Devaraj Time', exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Devaraj Den', exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Devaraj Orders', exact: true })).toBeVisible();
   const featured = page.locator('.play-product');
   await expect(featured).toHaveCount(2);
   await expect(featured.nth(0)).toContainText('Devaraj Time');
-  await expect(featured.nth(1)).toContainText('Devaraj Den');
+  await expect(featured.nth(1)).toContainText('Devaraj Orders');
   await expect(featured.nth(1)).toContainText('Available');
-  await expect(page.getByRole('link', { name: 'Open Devaraj Den' })).toHaveAttribute('href', 'https://den.devarajsolutions.site');
+  await expect(page.getByRole('link', { name: 'Open Devaraj Orders' })).toHaveAttribute('href', 'https://den.devarajsolutions.site');
   await expect(page.locator('a[href="#product-orders"]')).toBeVisible();
   const first = await featured.nth(0).boundingBox();
   const second = await featured.nth(1).boundingBox();
   expect(second!.y).toBeGreaterThan(first!.y + first!.height);
-  await page.getByRole('link', { name: 'Explore Devaraj Den' }).click();
-  await expect(page).toHaveURL(/products\/devaraj-den/);
+  await page.getByRole('link', { name: 'Explore Devaraj Orders' }).click();
+  await expect(page).toHaveURL(/products\/devaraj-orders/);
   await expect(page.getByRole('heading', { name: 'More orders. Less chaos.' })).toBeVisible();
-  await expect(page.getByText('DEVARAJ DEN · AVAILABLE', { exact: true })).toBeVisible();
+  await expect(page.getByText('DEVARAJ ORDERS · AVAILABLE', { exact: true })).toBeVisible();
   await expect(page.getByText('14 days · one owner · 50 orders per UTC calendar month', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Starter — $8 / 30 days', exact: true })).toBeVisible();
   await expect(page.getByText('Up to three users · 500 orders per UTC calendar month', { exact: true })).toBeVisible();
@@ -26,14 +26,14 @@ test('Devaraj Den is registered independently without replacing Time', async ({ 
   await expect(page.getByRole('heading', { name: /Scale — \$88/ })).toHaveCount(0);
   await expect(page.getByText('permanent limited free plan', { exact: false })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Get started', exact: false }).first()).toHaveAttribute('href', 'https://den.devarajsolutions.site');
-  await expect(page.getByRole('link', { name: 'View current plans in Devaraj Den' })).toHaveAttribute('href', 'https://den.devarajsolutions.site/app/subscription');
+  await expect(page.getByRole('link', { name: 'View current plans in Devaraj Orders' })).toHaveAttribute('href', 'https://den.devarajsolutions.site/app/subscription');
   await expect(page.getByText('Payments are reviewed manually', { exact: false })).toHaveCount(0);
   await expect(page.getByText('Does it verify KHQR payments?', { exact: true })).toBeVisible();
-  await page.getByRole('link', { name: 'Ask about Devaraj Den', exact: true }).click();
+  await page.getByRole('link', { name: 'Ask about Devaraj Orders', exact: true }).click();
   await expect(page).toHaveURL(/contact\?product=orders/);
   await expect(page.locator('select[name="product"]')).toHaveValue('orders');
   await page.goto('/products');
-  const card = page.locator('.product-card').filter({ has: page.getByRole('heading', { name: 'Devaraj Den', exact: true }) });
+  const card = page.locator('.product-card').filter({ has: page.getByRole('heading', { name: 'Devaraj Orders', exact: true }) });
   await expect(card.getByRole('link', { name: 'Learn more' })).toBeVisible();
   await expect(card.getByText('Available', { exact: true })).toBeVisible();
   await expect(card.getByRole('link', { name: 'Get started', exact: false })).toHaveAttribute('href', 'https://den.devarajsolutions.site');
@@ -47,11 +47,11 @@ test('launched product showcase fits mobile and dark mode', async ({ page }) => 
   await page.goto('/');
   const orders = page.locator('#product-orders');
   await orders.scrollIntoViewIfNeeded();
-  await expect(orders.getByRole('heading', { name: 'Devaraj Den', exact: true })).toBeVisible();
-  await expect(orders.getByRole('link', { name: 'Open Devaraj Den' })).toBeVisible();
+  await expect(orders.getByRole('heading', { name: 'Devaraj Orders', exact: true })).toBeVisible();
+  await expect(orders.getByRole('link', { name: 'Open Devaraj Orders' })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
   await page.screenshot({ path: 'test-results/orders-home-mobile.png', fullPage: true });
-  await page.goto('/products/devaraj-den');
+  await page.goto('/products/devaraj-orders');
   await expect(page.getByRole('link', { name: 'Start your free trial', exact: false })).toBeVisible();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 });
